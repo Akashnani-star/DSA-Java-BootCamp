@@ -4,8 +4,14 @@ public class FirstAndLastPosition {
     public static void main(String[] args) {
         int arr[] = { 5, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 10 };
         int target = 7;
-        System.out.println(binarySearch(arr, target, true));
-        System.out.println(binarySearch(arr, target, false));
+        int ans[] = {-1,-1};
+        ans[0] = binarySearch(arr, target, true);
+        if(ans[0] != -1){
+            ans[1] = binarySearch(arr, target, false);
+        }
+        for(int index: ans){
+            System.out.println(index);
+        }
     }
 
     static public int binarySearch(int arr[], int target, boolean firstPosition) {
